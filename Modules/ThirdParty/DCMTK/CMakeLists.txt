@@ -105,8 +105,8 @@ if(ITK_USE_SYSTEM_DCMTK)
   foreach(lib IN LISTS ITKDCMTK_LIBRARIES)
     if(TARGET DCMTK::${lib})
       list(REMOVE_ITEM ITKDCMTK_LIBRARIES ${lib})
+      list(APPEND ITKDCMTK_LIBRARIES DCMTK::${lib})
     endif()
-    list(APPEND ITKDCMTK_LIBRARIES DCMTK::${lib})
   endforeach()
 
   # When this module is loaded by an app, load DCMTK too.
